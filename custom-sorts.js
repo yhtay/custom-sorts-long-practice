@@ -45,6 +45,23 @@ function reverseBaseSort(arr) {
 
 function frequencySort(arr) {
   // Your code here
+  let object = {};
+
+  for (let num of arr) {
+    // console.log(num) // 1 1 2 2 2 3
+    if (object[num] === undefined) {
+      object[num] = 1;
+    } else {
+      object[num]++
+    }
+  }
+  // console.log(object)
+  return arr.sort( (a, b) => {
+    if (object[a] > object[b]) return 1;
+    if (object[a] < object[b]) return -1;
+    return b - a;
+  })
+
 }
 
 module.exports = [
