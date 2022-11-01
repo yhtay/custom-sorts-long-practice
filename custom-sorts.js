@@ -16,6 +16,18 @@ function oddEvenSort(arr) {
 
 function validAnagrams(s, t) {
   // Your code here
+  let arrS = s.split("");
+  let arrT = t.split("");
+
+  let sortedS = arrS.sort()
+  // console.log(sortedS); ['a', 'a', 'a','g', 'm', 'n','r']
+  let sortedT = arrT.sort()
+  // console.log(sortedT)
+  // console.log(sortedS === sortedT) // false because arrays are different point in memory
+  if (sortedS.join('') === sortedT.join('')) {
+    return true;
+  }
+  return false;
 }
 
 function reverseBaseSort(arr) {
